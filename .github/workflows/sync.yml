@@ -10,11 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Checkout source repo
-        uses: actions/checkout@v2
-        with:
-          repository: arturmkr/calculator
-          path: source-repo
+#      - name: Checkout source repo
+#        uses: actions/checkout@v2
+#        with:
+#          repository: arturmkr/calculator
+#          path: source-repo
 
 #      - name: Checkout target repo
 #        uses: actions/checkout@v2
@@ -22,12 +22,17 @@ jobs:
 #          repository: arturmkr/demo-package
 #          path: target-repo
 
-      - name: Copy data
-        run: |
-          cp -r source-repo/* ./mycalculator
+#      - name: Copy data
+#        run: |
+#          cp -r source-repo/* ./mycalculator
 
-      - name: Create File
-        run: echo "Hello, World!" > hello.txt
+      - name: Remove existing 'mycalculator' folder
+        run: |
+          rm -rf mycalculator
+
+      - name: Clone remote repo into 'mycalculator' folder
+        run: |
+          git clone https://github.com/arturmkr/calculator mycalculator
 
       - name: Push changes
         run: |
