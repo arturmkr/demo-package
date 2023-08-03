@@ -6,7 +6,7 @@ name = "your-package-name"
 version = "0.1.0"
 description = "Your package description"
 authors = ["Your Name <youremail@example.com>"]
-license = "MIT"
+license = { text = "MIT" }
 
 [options]
 packages = ["your-package-name"]
