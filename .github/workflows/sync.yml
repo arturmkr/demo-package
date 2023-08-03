@@ -14,15 +14,15 @@ jobs:
           repository: arturmkr/calculator
           path: source-repo
 
-      - name: Checkout target repo
-        uses: actions/checkout@v2
-        with:
-          repository: arturmkr/demo-package
-          path: target-repo
+#      - name: Checkout target repo
+#        uses: actions/checkout@v2
+#        with:
+#          repository: arturmkr/demo-package
+#          path: target-repo
 
       - name: Copy data
         run: |
-          cp -r source-repo/* target-repo/mycalculator
+          cp -r source-repo/* ./mycalculator
 
 #      - name: Push changes
 #        run: |
@@ -41,7 +41,6 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          path: target-repo
           branch: update_data
           base: main
           delete-branch: true
