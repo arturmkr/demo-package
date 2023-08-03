@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+
       - name: Checkout source repo
         uses: actions/checkout@v2
         with:
@@ -28,7 +30,7 @@ jobs:
         run: |
           git config user.name "Your Name"
           git config user.email "your-email@example.com"
-          git add .
+          git add ./mycalculator
           git commit -m "Sync changes"
 
       - uses: stefanzweifel/git-auto-commit-action@v4
