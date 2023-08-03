@@ -2,9 +2,6 @@ name: Repo Sync
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   sync:
@@ -40,3 +37,20 @@ jobs:
           repository: target-repo
           commit_message: Some commit
           push_options: --force
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          path: target-repo
+          branch: update_data
+          base: main
+          delete-branch: true
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          title: 'Update data'
+          commit-message: Update cache
+          labels: |
+            automated pr
+          body: |
+            Updating data
+          add-paths: |
+            data.json
