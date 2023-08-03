@@ -36,23 +36,23 @@ jobs:
 #          git add ./mycalculator
 #          git commit -m "Sync changes"
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Some commit
-          push_options: --force
-
-#      - name: Create Pull Request
-#        uses: peter-evans/create-pull-request@v4
+#      - uses: stefanzweifel/git-auto-commit-action@v4
 #        with:
-#          branch: update_data
-#          base: main
-#          delete-branch: true
-#          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-#          title: 'Update data'
-#          commit-message: Update cache
-#          labels: |
-#            automated pr
-#          body: |
-#            Updating data
+#          commit_message: Some commit
+#          push_options: --force
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: update_data
+          base: main
+          delete-branch: true
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          title: 'Update data'
+          commit-message: Update cache
+          labels: |
+            automated pr
+          body: |
+            Updating data
 #          add-paths: |
 #            /mycalculator
