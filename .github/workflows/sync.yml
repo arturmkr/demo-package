@@ -27,13 +27,13 @@ jobs:
         run: |
           cp -r source-repo/* target-repo/mycalculator
 
-      - name: Push changes
-        run: |
-          cd target-repo
-          git config user.name "Your Name"
-          git config user.email "your-email@example.com"
-          git add .
-          git commit -m "Sync changes"
+#      - name: Push changes
+#        run: |
+#          cd target-repo
+#          git config user.name "Your Name"
+#          git config user.email "your-email@example.com"
+#          git add .
+#          git commit -m "Sync changes"
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
