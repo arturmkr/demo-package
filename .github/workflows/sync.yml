@@ -34,4 +34,9 @@ jobs:
           git config user.email "your-email@example.com"
           git add .
           git commit -m "Sync changes"
-          git push
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: target-repo
+          commit_message: Some commit
+          push_options: --force
