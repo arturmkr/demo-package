@@ -33,6 +33,7 @@ jobs:
       - name: Clone remote repo into 'mycalculator' folder
         run: |
           git clone https://github.com/arturmkr/calculator mycalculator
+          rm -rf mycalculator/.git
 
       - name: Push changes
         run: |
