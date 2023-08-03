@@ -51,5 +51,3 @@ jobs:
             automated pr
           body: |
             Updating data
-          add-paths: |
-            data.json
