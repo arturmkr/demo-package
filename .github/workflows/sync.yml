@@ -24,30 +24,28 @@ jobs:
         run: |
           cp -r source-repo/* ./mycalculator
 
-#      - name: Push changes
-#        run: |
-#          cd target-repo
-#          git config user.name "Your Name"
-#          git config user.email "your-email@example.com"
-#          git add .
-#          git commit -m "Sync changes"
+      - name: Push changes
+        run: |
+          git config user.name "Your Name"
+          git config user.email "your-email@example.com"
+          git add .
+          git commit -m "Sync changes"
 
-#      - uses: stefanzweifel/git-auto-commit-action@v4
-#        with:
-#          repository: target-repo
-#          commit_message: Some commit
-#          push_options: --force
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          branch: update_data
-          base: main
-          delete-branch: true
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          title: 'Update data'
-          commit-message: Update cache
-          labels: |
-            automated pr
-          body: |
-            Updating data
+          commit_message: Some commit
+          push_options: --force
+
+#      - name: Create Pull Request
+#        uses: peter-evans/create-pull-request@v4
+#        with:
+#          branch: update_data
+#          base: main
+#          delete-branch: true
+#          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+#          title: 'Update data'
+#          commit-message: Update cache
+#          labels: |
+#            automated pr
+#          body: |
+#            Updating data
