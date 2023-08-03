@@ -22,7 +22,6 @@ jobs:
         with:
           repository: arturmkr/demo-package
           path: target-repo
-          token: ${{ secrets.TARGET_REPO_TOKEN }}
 
       - name: Copy data
         run: |
