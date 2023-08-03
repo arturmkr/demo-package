@@ -1,20 +1,20 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 
-[metadata]
+[project]
 name = "your-package-name"
 version = "0.1.0"
 description = "Your package description"
-author = "Your Name"
-author_email = "youremail@example.com"
+authors = ["Your Name <youremail@example.com>"]
 license = "MIT"
 
 [options]
-packages = find:
+packages = ["your-package-name"]
 
 [options.package_data]
-your_package_name = ['*.txt']
+your_package_name = ['*.txt',]
 
 [options.extras_require]
-dev =
-  ["pytest>=6.2.4"]
+dev = [
+  "pytest>=6.2.4",
+]
