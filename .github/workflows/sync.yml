@@ -18,6 +18,7 @@ jobs:
         run: |
           git clone https://github.com/arturmkr/metrics metrics
           rm -rf metrics/.git
+          rm -rf metrics/.github
 
       - name: Add __init__.py files
         run: |
