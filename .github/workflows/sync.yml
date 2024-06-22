@@ -19,6 +19,10 @@ jobs:
           git clone https://github.com/arturmkr/metrics metrics
           rm -rf metrics/.git
 
+      - name: Add __init__.py files
+        run: |
+          find metrics -type d -exec touch {}/__init__.py \;
+
       - name: Push changes
         run: |
           git config user.name "GitHub Action Repo Sync"
