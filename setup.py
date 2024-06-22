@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='mycalculator',
+    name='metrics',
     version='0.0.1',
-    author='My super team',
+    author='Artur Mkrtychian',
     author_email='',
     url='',
-    description='calculator',
+    description='metrics info',
     packages=find_packages(),
     python_requires='>=3.6',
 )

@@ -10,58 +10,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-#      - name: Checkout source repo
-#        uses: actions/checkout@v2
-#        with:
-#          repository: arturmkr/calculator
-#          path: source-repo
-
-#      - name: Checkout target repo
-#        uses: actions/checkout@v2
-#        with:
-#          repository: arturmkr/demo-package
-#          path: target-repo
-
-#      - name: Copy data
-#        run: |
-#          cp -r source-repo/* ./mycalculator
-
-      - name: Remove existing 'mycalculator' folder
+      - name: Remove existing 'metrics' folder
         run: |
-          rm -rf mycalculator
+          rm -rf metrics
 
-      - name: Clone remote repo into 'mycalculator' folder
+      - name: Clone remote repo into 'metrics' folder
         run: |
-          git clone https://github.com/arturmkr/calculator mycalculator
-          rm -rf mycalculator/.git
+          git clone https://github.com/arturmkr/metrics metrics
+          rm -rf metrics/.git
 
       - name: Push changes
         run: |
-          git config user.name "Your Name"
-          git config user.email "your-email@example.com"
+          git config user.name "GitHub Action Repo Sync"
+          git config user.email "no-reply@example.com"
           git status
           git add .
           git status
           git commit -m "Sync changes"
           git push
-
-#      - uses: stefanzweifel/git-auto-commit-action@v4
-#        with:
-#          commit_message: Some commit
-#          push_options: --force
-
-#      - name: Create Pull Request
-#        uses: peter-evans/create-pull-request@v4
-#        with:
-#          branch: update_data
-#          base: main
-#          delete-branch: true
-#          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-#          title: 'Update data'
-#          commit-message: Update cache
-#          labels: |
-#            automated pr
-#          body: |
-#            Updating data
-#          add-paths: |
-#            /mycalculator
