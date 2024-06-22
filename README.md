@@ -1,7 +1,6 @@
 # Python Packaging Example
 
-This repository demonstrates effective practices for packaging Python code, using a simple system metrics collection library as an example. The code itself is straightforward, designed to showcase packaging, dependency management, and distribution techniques.
-
+This repository demonstrates effective practices for packaging Python code, using a simple system metrics collection library as an example. The actual code used for demonstration is hosted in a separate repository, which you can access [here](https://github.com/arturmkr/metrics).
 
 ## Installation
 
